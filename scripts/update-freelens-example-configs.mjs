@@ -16,16 +16,31 @@ const dryRun = args.has("--dry-run");
 const pruneWorkflows = args.has("--prune-workflows");
 
 const ref = getOptionValue("--ref") ?? process.env.FREELENS_EXAMPLE_REF ?? defaultRef;
-const excludedWorkflowFiles = new Set(["claude-task.yaml", "claude.yaml", "npm-audit.yaml", "osv-scanner.yaml"]);
+const excludedWorkflowFiles = new Set([
+  "claude-task.yaml",
+  "claude.yaml",
+  "integration-tests.yaml",
+  "npm-audit.yaml",
+  "osv-scanner.yaml",
+]);
 
 const fileMappings = [
   [".trunk/trunk.yaml", ".trunk/trunk.yaml"],
   ["biome.jsonc", "biome.jsonc"],
-  [".renovaterc.json5", ".renovaterc.json5"],
+  ["vite.config.mjs", "vite.config.mjs"],
+  ["build/vite-plugin-css-module-declarations.mjs", "build/vite-plugin-css-module-declarations.mjs"],
+  ["build/vite-plugin-host-modules.mjs", "build/vite-plugin-host-modules.mjs"],
+  ["build/vite-plugin-standard-decorators.mjs", "build/vite-plugin-standard-decorators.mjs"],
+  ["tsconfig.base.json", "tsconfig.base.json"],
   ["tsconfig.json", "tsconfig.json"],
-  ["knip.jsonc", "knip.jsonc"],
-  ["electron.vite.config.js", "electron.vite.config.ts"],
+  ["src/tsconfig.json", "src/tsconfig.json"],
+  ["src/main/tsconfig.json", "src/main/tsconfig.json"],
+  ["src/renderer/tsconfig.json", "src/renderer/tsconfig.json"],
+  ["src/common/tsconfig.json", "src/common/tsconfig.json"],
   ["vitest.config.ts", "vitest.config.ts"],
+  ["mise.toml", "mise.toml"],
+  ["mise.lock", "mise.lock"],
+  [".nvmrc", ".nvmrc"],
 ];
 
 const updated = [];
