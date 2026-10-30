@@ -90,6 +90,8 @@ Use pnpm, at the version of `packageManager` in `package.json`, and the Node ver
 - `pnpm knip:check`: check dependency and file usage (run `pnpm build` first).
 - `pnpm update-example-configs`: pull the shared tooling files from freelensapp/freelens-example-extension (`--dry-run` to preview).
 
+The automation workflows (`biome-migrate`, `trunk-upgrade`, `npm-dedupe`, `npm-version`, `tag`) push commits, open and merge pull requests and create tags as a GitHub App, so that what they push triggers CI, which a push with `GITHUB_TOKEN` does not. They read the app's client ID from the `AUTOMATION_APP_CLIENT_ID` repository variable and its private key from the `AUTOMATION_APP_PRIVATE_KEY` secret; the app needs read and write access to contents and pull requests on the repository. `scripts/update-freelens-example-configs.mjs` adds the same token step when it syncs these workflows from the template.
+
 For normal code changes, prefer at least:
 
 ```sh
