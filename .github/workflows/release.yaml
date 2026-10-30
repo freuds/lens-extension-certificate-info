@@ -77,8 +77,12 @@ jobs:
       - name: Pack packages
         run: pnpm --color=always --stream pack
 
+      # The npm package belongs to the upstream repository, so publishing is
+      # opt-in: set the NPM_PUBLISH repository variable to "true" to enable it.
+      # The GitHub release below is created either way.
       - name: Publish npm packages
         id: publish-npm
+        if: vars.NPM_PUBLISH == 'true'
         run: |
           case "${GITHUB_REF_NAME}" in
             *-*) dist_tag=next;;
