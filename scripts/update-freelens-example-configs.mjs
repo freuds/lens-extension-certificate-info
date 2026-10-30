@@ -158,7 +158,7 @@ function transformContent(sourcePath, targetPath, content) {
         if: steps.check-version.outputs.is_release == 'true'
         id: app-token
         with:
-          client-id: 1248576
+          client-id: \${{ vars.AUTOMATION_APP_CLIENT_ID }}
           private-key: \${{ secrets.AUTOMATION_APP_PRIVATE_KEY }}
 
       - name: Create tag from the main branch\n`,
@@ -170,7 +170,7 @@ function transformContent(sourcePath, targetPath, content) {
       - uses: actions/create-github-app-token@v3
         id: app-token
         with:
-          client-id: 1248576
+          client-id: \${{ vars.AUTOMATION_APP_CLIENT_ID }}
           private-key: \${{ secrets.AUTOMATION_APP_PRIVATE_KEY }}
 \n`,
     );
