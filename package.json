@@ -1,6 +1,7 @@
 {
   "name": "lens-certificate-info",
   "version": "5.0.0",
+  "private": true,
   "author": {
     "name": "Jan-Otto Kröpke",
     "email": "mail@jkroepke.de",
@@ -20,10 +21,6 @@
   ],
   "type": "module",
   "copyright": "© 2021-2026 Jan-Otto Kröpke",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "scripts": {
     "biome": "pnpm dlx @biomejs/biome@2.6.3",
     "biome:check": "pnpm biome check",
