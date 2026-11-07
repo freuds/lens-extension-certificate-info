@@ -22,7 +22,7 @@
   "type": "module",
   "copyright": "© 2021-2026 Jan-Otto Kröpke",
   "scripts": {
-    "biome": "pnpm dlx @biomejs/biome@2.6.3",
+    "biome": "pnpm dlx @biomejs/biome@2.6.5",
     "biome:check": "pnpm biome check",
     "biome:fix": "pnpm biome check --fix",
     "biome:migrate": "pnpm biome migrate --write",
