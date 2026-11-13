@@ -74,7 +74,7 @@
     "@vitejs/plugin-react": "6.3.0",
     "electron": "45.2.3",
     "esbuild": "0.28.2",
-    "jsdom": "30.1.3",
+    "jsdom": "31.0.0",
     "mobx": "7.0.6",
     "mobx-react": "10.0.2",
     "react": "19.3.1",
